@@ -4,6 +4,7 @@ const morgan = require('morgan');
 require('dotenv').config();
 
 const productsRouter = require('./src/routes/products');
+const assetsRouter = require('./src/routes/assets');
 const ordersRouter = require('./src/routes/orders');
 
 const app = express();
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/products', productsRouter);
 app.use('/api/orders', ordersRouter);
+app.use('/api/assets', assetsRouter);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
